@@ -1,5 +1,6 @@
 
 import './App.css';
+
 let palavra = "matapalito";
 let palavra_arr = palavra
 let vitoria = false
