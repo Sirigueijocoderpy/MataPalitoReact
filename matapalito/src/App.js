@@ -8,7 +8,7 @@ let arrayletras = []
 let cemiterio = []
 
 for (let i = 0; i < palavra.length; i++) {
-  arrayletras[i] = ''
+  arrayletras[i] = ' '
 
 }
 
@@ -16,14 +16,14 @@ function Tentar() {
 
   let letra = document.getElementById('letter').value.toLowerCase()
 
-  if (vidas > 0 && vitoria == false) {
+  if (vidas > 0) {
 
     if (letra == '') {
       return
 
     }
 
-    if (arrayletras.indexOf(letra) != -1 || cemiterio.indexOf(letra) != -1){
+    if (arrayletras.indexOf(letra) != -1 || cemiterio.indexOf(letra) != -1) {
       return
 
     }
@@ -39,6 +39,13 @@ function Tentar() {
 
       }
 
+      document.getElementById('resposta').innerHTML = 'Resposta: '
+
+      for (let i = 0; i < arrayletras.length; i++) {
+        document.getElementById('resposta').innerHTML += arrayletras[i]
+
+      }
+
     } else {
 
       vidas -= 1
@@ -51,9 +58,10 @@ function Tentar() {
 
     Vitoria()
 
-    if (vitoria == true){
-      console.log('venceu!')
-  
+    if (vitoria == true) {
+      alert('Você venceu! \n' + 'A palavra era: ' + palavra_arr)
+      window.location.reload()
+
     }
 
   } else {
@@ -64,10 +72,11 @@ function Tentar() {
 
 }
 
-function Vitoria(){
 
-  for (let i = 0; i < palavra_arr.length; i++){
-    if (arrayletras[i] == palavra_arr[i]){
+function Vitoria() {
+
+  for (let i = 0; i < palavra_arr.length; i++) {
+    if (arrayletras[i] == palavra_arr[i]) {
       vitoria = true
 
     } else {
@@ -93,6 +102,10 @@ function App() {
       <br></br>
 
       <button onClick={Tentar}>Advinhar</button>
+
+      <p id='resposta'>
+        Resposta: 
+      </p>
 
       <p id='vidas'>
         Número de tentativas: {vidas}
