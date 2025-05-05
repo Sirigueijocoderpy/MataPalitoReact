@@ -1,6 +1,8 @@
 
 import './App.css';
 let palavra = "matapalito";
+let palavra_arr = palavra
+let vitoria = false
 let vidas = 6
 let arrayletras = []
 let cemiterio = []
@@ -14,9 +16,9 @@ function Tentar() {
 
   let letra = document.getElementById('letter').value.toLowerCase()
 
-  if (vidas > 0) {
+  if (vidas > 0 && vitoria == false) {
 
-    if (palavra.indexOf(letra) == '') {
+    if (letra == '') {
       return
 
     }
@@ -47,9 +49,31 @@ function Tentar() {
 
     }
 
+    Vitoria()
+
+    if (vitoria == true){
+      console.log('venceu!')
+  
+    }
+
   } else {
 
     alert('Suas vidas acabaram!')
+
+  }
+
+}
+
+function Vitoria(){
+
+  for (let i = 0; i < palavra_arr.length; i++){
+    if (arrayletras[i] == palavra_arr[i]){
+      vitoria = true
+
+    } else {
+      vitoria = false
+      break
+    }
 
   }
 
