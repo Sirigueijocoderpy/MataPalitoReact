@@ -94,9 +94,9 @@ function Vitoria() {
 function App() {
   return (
 
-    <div className='tentativas'>
+    <div className='container'>
 
-      <h1>Jogo da Forca</h1>
+      <h1 className='Titulo'>Jogo da Forca</h1>
 
       <input type='text' id='letter' maxLength='1' placeholder='Digite uma letra' className='imput-letter'></input>
 
