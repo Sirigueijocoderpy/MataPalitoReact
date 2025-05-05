@@ -5,7 +5,7 @@ let vidas = 6
 let arrayletras = []
 let cemiterio = []
 
-for (let i = 0; i < palavra.length; i++){
+for (let i = 0; i < palavra.length; i++) {
   arrayletras[i] = ''
 
 }
@@ -14,24 +14,42 @@ function Tentar() {
 
   let letra = document.getElementById('letter').value.toLowerCase()
 
-  if (palavra.indexOf(letra) != -1 || palavra.indexOf(letra) != ''){
+  if (vidas > 0) {
 
-    while (palavra.indexOf(letra) != -1){
-      let indice = palavra.indexOf(letra)
+    if (palavra.indexOf(letra) == '') {
+      return
 
-      arrayletras[indice] = letra
+    }
 
-      palavra = palavra.replace(letra, ' ')
-      
+    if (arrayletras.indexOf(letra) != -1 || cemiterio.indexOf(letra) != -1){
+      return
+
+    }
+
+    if (palavra.indexOf(letra) != -1) {
+
+      while (palavra.indexOf(letra) != -1) {
+        let indice = palavra.indexOf(letra)
+
+        arrayletras[indice] = letra
+
+        palavra = palavra.replace(letra, ' ')
+
+      }
+
+    } else {
+
+      vidas -= 1
+      cemiterio.push(letra)
+
+      document.getElementById('vidas').innerHTML = `Número de tentativas: ${vidas}`
+      document.getElementById('cemiterio').innerHTML = `Letras já testadas: ${cemiterio}`
+
     }
 
   } else {
 
-    vidas -= 1
-    cemiterio.push(letra)
-
-    document.getElementById('vidas').innerHTML = `Número de tentativas: ${vidas}`
-    document.getElementById('cemiterio').innerHTML = `Letras já testadas: ${cemiterio}`
+    alert('Suas vidas acabaram!')
 
   }
 
