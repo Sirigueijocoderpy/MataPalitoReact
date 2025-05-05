@@ -3,18 +3,31 @@ import './App.css';
 let palavra = "matapalito";
 let vidas = 6
 let arrayletras = []
-function tentar() {
+let cemiterio = []
+function Tentar() {
   document.getElementById('letter').value = document.getElementById('letter').value.toLowerCase()
-  let arrayletras += document
-}
+  arrayletras.push(document.getElementById('letter').value)}
+  //Game Loop
+  while(arrayletras !== palavra || vidas > 0){
+    if (arrayletras.includes(arrayletras) === false){
+      
+      vidas = vidas - 1
+    }
+    else if (arrayletras.includes(arrayletras) === true){
+      console.log("Você acertou a letra")
+    }
+
+  }
+  
+    
 function App() {
   return (
     
-    <div class='tentativas'>
+    <div className='tentativas'>
       <h1>Jogo da Forca</h1>
-      <input type='text' id='letter' maxlength='1'placeholder ='Digite uma letra' class='imput-letter'></input>
+      <input type='text' id='letter' maxLength='1'placeholder ='Digite uma letra' className='imput-letter'></input>
       <br></br>
-      <button onclick='tentar()'>Advinhar</button>
+      <button onClick='Tentar()'>Advinhar</button>
       <p>
         Numero de tentantativas: {vidas}
 
@@ -22,11 +35,14 @@ function App() {
       <p>
         Numero de letras: {palavra.length}
       </p>
+      <p>
+        Letras já tentadas: {arrayletras}
+      </p>
     </div>
     
     
   )
 }
-
+console.log(arrayletras.includes(arrayletras))
 
 export default App;
