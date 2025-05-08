@@ -93,8 +93,9 @@ function Vitoria() {
 
 function App() {
   return (
-
+    <>
     <div className='container'>
+      
 
       <h1 className='Titulo'>Jogo da Forca</h1>
 
@@ -102,7 +103,7 @@ function App() {
 
       <br></br>
 
-      <button onClick={Tentar}>Advinhar</button>
+      <button className='btn' onClick={Tentar}>Advinhar</button>
 
       <p id='resposta'>
         Resposta: 
@@ -122,7 +123,7 @@ function App() {
       </p>
 
     </div>
-
+    </>
 
   )
 }

@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+body{
+  justify-content: center;
+  background-color: #282c34;
+  display: flex;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #ccc;
+  width: 700px;
+  margin-top: 10px
+}
+input{
+  border: none;
+  box-shadow: #282c34 0px 0px 5px 0px;
+  border-radius: 10px;
+  text-align: center;
+  
+}
+.btn{
+  box-shadow: #282c34 0px 0px 5px 0px;
+  border-radius: 10px;
+  border: none;
+}
+ 
