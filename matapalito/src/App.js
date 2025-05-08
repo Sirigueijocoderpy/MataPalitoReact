@@ -1,10 +1,10 @@
 
 import './App.css';
 
-let palavra = "matapalito";
+let palavra = '';
 let palavra_arr = palavra
 let vitoria = false
-let vidas = 6
+let vidas = 10
 let arrayletras = []
 let cemiterio = []
 
@@ -97,7 +97,7 @@ function App() {
     <div className='container'>
       
 
-      <h1 className='Titulo'>Jogo da Forca</h1>
+      <h1 className='Titulo'>Mata Palito</h1>
 
       <input type='text' id='letter' maxLength='1' placeholder='Digite uma letra' className='imput-letter'></input>
 
